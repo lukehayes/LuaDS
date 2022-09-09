@@ -4,8 +4,8 @@ list = {}
 function list:new(value)
     local t = setmetatable(
         {
-            head = nil,
-            size = 0
+            head = node:new(value, nil),
+            size = 1
         },
         {
             __index = list,
@@ -14,9 +14,6 @@ function list:new(value)
             end
         }
     )
-
-    t.head = node:new(value, nil)
-    --t.head.next_node = node:new(100, t.head)
 
     return t
 end
