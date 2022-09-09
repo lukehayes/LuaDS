@@ -18,21 +18,57 @@ function list:new(value)
     return t
 end
 
+-----------
+-- Print the all of the values inside the linked list.
+--
+-- @return void
 function list:print()
     local current = self.head
+
     while current.next_node ~= nil do
         print(current.value)
         current = current.next_node
     end
+
+    print(current.value)
 end
 
-function list:addNodeFront(value)
-    local head = self.head
+-----------
+-- Add a new node to the front of the list.
+--
+-- @param The value to be added to the linked list.
+--
+-- @return void
+function list:pushFront(value)
     local temp = self.head
-    self.head = node
-    node.next_node = temp
+    self.head  = node:new(value)
+    self.head.next_node = temp
 end
 
+-----------
+-- Add a new node to the back of the list.
+--
+-- @param The value to be added to the linked list.
+--
+-- @return void
+function list:pushBack(value)
+
+    local current = self.head
+
+    while current.next_node ~= nil do
+        current = current.next_node
+
+        if(current.next_node ~= nil) then
+            local temp = self.head
+            current.next_node = node:new(value, nil)
+        end
+    end
+end
+
+-----------
+-- Get the number of elements inside the linked list.
+--
+-- @return number
 function list:getSize()
 
     local current = self.head
@@ -44,7 +80,6 @@ function list:getSize()
     while current.next_node ~= nil do
         self.size = self.size + 1
         current = current.next_node
-        print("Counting")
     end
 
     return self.size
