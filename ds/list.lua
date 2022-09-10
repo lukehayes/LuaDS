@@ -57,12 +57,9 @@ function list:pushBack(value)
 
     while current.next_node ~= nil do
         current = current.next_node
-
-        if(current.next_node ~= nil) then
-            local temp = self.head
-            current.next_node = node:new(value, nil)
-        end
     end
+
+    current.next_node = node:new(value, nil)
 end
 
 -----------
