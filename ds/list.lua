@@ -46,7 +46,7 @@ function list:pushFront(value)
 end
 
 -----------
--- Remove and return a node to the front of the list.
+-- Remove and return a node from the front of the list.
 --
 -- @return number
 function list:popFront()
