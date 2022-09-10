@@ -46,6 +46,18 @@ function list:pushFront(value)
 end
 
 -----------
+-- Remove and return a node to the front of the list.
+--
+-- @return number
+function list:popFront()
+    local node = self.head
+    local next_node = self.head.next_node
+    self.head = next_node
+
+    return node.value
+end
+
+-----------
 -- Add a new node to the back of the list.
 --
 -- @param The value to be added to the linked list.
