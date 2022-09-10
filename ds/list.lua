@@ -58,6 +58,24 @@ function list:popFront()
 end
 
 -----------
+-- Remove and return a node from the front of the list.
+--
+-- @return number
+function list:popBack()
+
+    -- TODO Imlement properly
+    local current = self.head
+    local temp    = self.head
+
+    while current.next_node ~= nil do
+        current = current.next_node
+        temp = temp.next_node
+    end
+
+    return current.value
+end
+
+-----------
 -- Add a new node to the back of the list.
 --
 -- @param The value to be added to the linked list.
