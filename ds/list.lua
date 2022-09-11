@@ -24,11 +24,17 @@ end
 -- @return void
 function list:print()
     local current = self.head
+    local index = 1
 
-    print("List:")
+    print("List: size(" ..  self:getSize() .. ")")
     while current ~= nil do
-        print("-> " .. current.value)
+        if(index == 1) then
+            print("=> " .. current.value .. " (head)")
+        else
+            print("-> " .. current.value)
+        end
         current = current.next_node
+        index = index + 1
     end
 end
 
