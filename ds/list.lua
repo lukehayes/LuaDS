@@ -25,12 +25,11 @@ end
 function list:print()
     local current = self.head
 
-    while current.next_node ~= nil do
-        print(current.value)
+    print("List:")
+    while current ~= nil do
+        print("-> " .. current.value)
         current = current.next_node
     end
-
-    print(current.value)
 end
 
 -----------
