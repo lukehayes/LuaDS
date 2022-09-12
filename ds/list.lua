@@ -1,14 +1,27 @@
-local node = require("ds/node")
-list = {}
+--- An implementation of a Linked List.
+-- @module list
 
-function list:new()
+local node = require("ds.node")
+
+--- List table fields
+-- @field head
+-- @field tail
+List = {
+    head = nil,
+    tail = nil
+}
+
+
+-----------
+-- Create a new empty instance of the linked list.
+--
+-- @return List
+function List:new()
     local t = setmetatable(
         {
-            head = nil,
-            tail = nil,
         },
         {
-            __index = list,
+            __index = List,
             __tostring = function() 
                 return "Linked List with " .. self:getSize() .. " elements."
             end
@@ -22,7 +35,7 @@ end
 -- Print the all of the values inside the linked list.
 --
 -- @return void
-function list:print()
+function List:print()
     local current = self.head
     local index = 1
 
@@ -47,10 +60,10 @@ end
 -----------
 -- Add a new node to the front of the list.
 --
--- @param The value to be added to the linked list.
+-- @param value
 --
 -- @return void
-function list:pushFront(value)
+function List:pushFront(value)
     local temp = self.head
     self.head  = node:new(value)
     self.head.next_node = temp
@@ -60,7 +73,7 @@ end
 -- Remove and return a node from the front of the list.
 --
 -- @return number
-function list:popFront()
+function List:popFront()
     local node = self.head
     local next_node = self.head.next_node
     self.head = next_node
@@ -69,10 +82,10 @@ function list:popFront()
 end
 
 -----------
--- Remove and return a node from the front of the list.
+-- Remove and return a node from the back of the list.
 --
 -- @return number
-function list:popBack()
+function List:popBack()
     local current = self.head
     local counter = 0
 
@@ -93,10 +106,10 @@ end
 -----------
 -- Add a new node to the back of the list.
 --
--- @param The value to be added to the linked list.
+-- @param value
 --
 -- @return void
-function list:pushBack(value)
+function List:pushBack(value)
 
     local current = self.head
 
@@ -116,7 +129,7 @@ end
 -- Get the number of elements inside the linked list.
 --
 -- @return number
-function list:getSize()
+function List:getSize()
 
     local current = self.head
     local size = 0
@@ -129,5 +142,5 @@ function list:getSize()
     return size
 end
 
-return list
+return List
 
