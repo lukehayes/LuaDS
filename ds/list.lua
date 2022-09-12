@@ -85,7 +85,7 @@ function list:popBack()
         current   = current.next_node
     end
 
-    return self.tail
+    return self.tail.value
 end
 
 -----------
