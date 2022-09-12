@@ -5,6 +5,7 @@ function list:new(value)
     local t = setmetatable(
         {
             head = node:new(value, nil),
+            tail = nil,
             size = 1
         },
         {
@@ -72,12 +73,16 @@ function list:popBack()
     local current = self.head
     local temp    = self.head
 
-    while current.next_node ~= nil do
-        current = current.next_node
-        temp = temp.next_node
+    while current ~= nil do
+
+        if(current.next_node == nil) then
+            self.tail = current
+        end
+
+        current   = current.next_node
     end
 
-    return current.value
+    return self.tail
 end
 
 -----------
