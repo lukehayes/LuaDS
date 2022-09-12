@@ -75,17 +75,26 @@ function list:popBack()
     -- returns tail but doesn't remove it yet.
     local current = self.head
     local temp    = self.head
+    local sz      = self:getSize()
+    local prev_index   = sz - 1
+    local prev_node = self.head
+    local counter = 0
 
     while current ~= nil do
 
         if(current.next_node == nil) then
             self.tail = current
         end
+        
+        if(counter == sz - 1) then
+            prev_node = current
+            self.tail = prev_node
+            return current.next_node.value
+        end
 
-        current   = current.next_node
+        current = current.next_node
+        counter = counter + 1
     end
-
-    return self.tail.value
 end
 
 -----------
