@@ -30,7 +30,9 @@ function list:print()
     print("List: size(" ..  self:getSize() .. ")")
     while current ~= nil do
         if(index == 1) then
-            print("=> " .. current.value .. " (head)")
+            print("=> " .. current.value .. " (HEAD)")
+        elseif(index == self:getSize()) then
+            print("=> " .. current.value .. " (TAIL)")
         else
             print("-> " .. current.value)
         end
