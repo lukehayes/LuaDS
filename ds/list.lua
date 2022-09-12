@@ -71,7 +71,8 @@ end
 -- @return number
 function list:popBack()
 
-    -- TODO Imlement properly
+    -- TODO Implementation half way there.
+    -- returns tail but doesn't remove it yet.
     local current = self.head
     local temp    = self.head
 
