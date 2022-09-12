@@ -26,7 +26,10 @@ function list:print()
     local current = self.head
     local index = 1
 
+    print("")
     print("List: size(" ..  self:getSize() .. ")")
+    print("--------------")
+    print("")
     while current ~= nil do
         if(index == 1) then
             print("=> " .. current.value .. " (HEAD)")
@@ -38,6 +41,7 @@ function list:print()
         current = current.next_node
         index = index + 1
     end
+    print("")
 end
 
 -----------
