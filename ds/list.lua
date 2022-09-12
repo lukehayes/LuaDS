@@ -106,6 +106,11 @@ function list:pushBack(value)
 
     local current = self.head
 
+    if self.head == nil then
+        self.head = node:new(value, nil)
+        return
+    end
+
     while current.next_node ~= nil do
         current = current.next_node
     end
