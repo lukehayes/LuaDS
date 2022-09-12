@@ -6,7 +6,6 @@ function list:new()
         {
             head = nil,
             tail = nil,
-            size = 1
         },
         {
             __index = list,
