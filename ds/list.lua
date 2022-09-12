@@ -120,17 +120,14 @@ end
 function list:getSize()
 
     local current = self.head
+    local size = 0
 
-    if(current ~= nil) then
-        self.size = 1
-    end
-
-    while current.next_node ~= nil do
-        self.size = self.size + 1
+    while current ~= nil do
+        size = size + 1
         current = current.next_node
     end
 
-    return self.size
+    return size
 end
 
 return list
