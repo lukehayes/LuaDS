@@ -1,10 +1,10 @@
 local node = require("ds/node")
 list = {}
 
-function list:new(value)
+function list:new()
     local t = setmetatable(
         {
-            head = node:new(value, nil),
+            head = nil,
             tail = nil,
             size = 1
         },
