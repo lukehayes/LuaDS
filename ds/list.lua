@@ -10,7 +10,7 @@ function list:new()
         {
             __index = list,
             __tostring = function() 
-                return "Linked List" 
+                return "Linked List with " .. self:getSize() .. " elements."
             end
         }
     )
