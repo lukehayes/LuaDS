@@ -1,11 +1,23 @@
--- A node class. The list object will hold many of then.
---
-node = {}
+--- Node helper object
+-- @module node
 
-function node:new(value, next_node)
+--- Node table fields
+-- @field value The value to be stored in the node.
+-- @field next_node The next node in the chain.
+Node = {value = nil, next_node = nil}
+
+
+-----------
+-- Create a new instance of a Node object.
+--
+-- @param value The value to be stored in the node.
+-- @param next_node The next node in the chain.
+--
+-- @return Node
+function Node:new(value, next_node)
     local t = setmetatable(
-        {value = nil, next_node = nil},
-        {__index = node}
+        {},
+        {__index = Node}
     )
 
     t.value = value or 0
@@ -15,5 +27,5 @@ function node:new(value, next_node)
 end
 
 
-return node
+return Node
 
