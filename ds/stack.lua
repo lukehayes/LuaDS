@@ -12,11 +12,10 @@ local Stack = {
 -- @return Stack
 function Stack:new()
     local t = setmetatable(
-        {
-        },
+        {},
         {
             __index = Stack,
-            __tostring = function() 
+            __tostring = function()
                 return "Stack with " .. self:getSize() .. " elements."
             end
         }
@@ -26,32 +25,19 @@ function Stack:new()
 end
 
 -----------
--- Push a new element onto the stop of the stack.
+-- Push a new element onto the top of the stack.
 --
 -- @param value The value to be added.
 --
 -- @return Stack
 function Stack:push(value)
 
-    local current = self.head
-    local chain = nil
-
-    if not self.head.next_node then
-        chain = self.head.next_node
-    end
-
-    if not current then
+    if not self.head then
         self.head = Node:new(value)
     else
-        while current do
-            current = current.next_node
-            self.head = Node:new(value, chain)
-        end
-
+        self.head = Node:new(value, self.head)
     end
 
-    local next_node = self.head.next_node
-    self.head = Node:new(value, self.head.next_node)
 end
 
 -----------
