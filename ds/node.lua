@@ -1,5 +1,6 @@
---- Node helper object
--- @module node
+--- Node helper object for use in most of the data
+--  structures included with this library.
+-- @module Node
 
 --- Node table fields
 -- @field value The value to be stored in the node.

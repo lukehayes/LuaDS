@@ -1,5 +1,5 @@
 --- An implementation of a Linked List.
--- @module list
+-- @module List
 
 local node = require("ds.node")
 
@@ -60,7 +60,7 @@ end
 -----------
 -- Add a new node to the front of the list.
 --
--- @param value
+-- @param value The value to be added.
 --
 -- @return void
 function List:pushFront(value)
@@ -72,7 +72,7 @@ end
 -----------
 -- Remove and return a node from the front of the list.
 --
--- @return number
+-- @return number The head element of the list.
 function List:popFront()
     local node = self.head
     local next_node = self.head.next_node
@@ -84,7 +84,7 @@ end
 -----------
 -- Remove and return a node from the back of the list.
 --
--- @return number
+-- @return number The tail element of the list.
 function List:popBack()
     local current = self.head
     local counter = 0
@@ -106,7 +106,7 @@ end
 -----------
 -- Add a new node to the back of the list.
 --
--- @param value
+-- @param value The value to be added.
 --
 -- @return void
 function List:pushBack(value)
@@ -128,7 +128,7 @@ end
 -----------
 -- Get the number of elements inside the linked list.
 --
--- @return number
+-- @return number The number of elements inside the list.
 function List:getSize()
 
     local current = self.head
