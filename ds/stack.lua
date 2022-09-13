@@ -25,6 +25,16 @@ function Stack:new()
 end
 
 -----------
+-- Pop an element off of the top of the stack.
+--
+-- @return Node The node table at the top of the stack.
+function Stack:pop()
+    local head = self.head
+    self.head = self.head.next_node
+    return head.value
+end
+
+-----------
 -- Push a new element onto the top of the stack.
 --
 -- @param value The value to be added.
