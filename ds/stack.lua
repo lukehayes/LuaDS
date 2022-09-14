@@ -63,9 +63,35 @@ function Stack:getSize()
         size = size + 1
         current = current.next_node
     end
-
-    return size
+return size
 end
+
+-----------
+-- Print the all of the values inside the linked list.
+--
+-- @return void
+function Stack:print()
+    local current = self.head
+    local index = 1
+
+    print("")
+    print("Stack: size(" ..  self:getSize() .. ")")
+    print("--------------")
+    print("")
+    while current ~= nil do
+        if(index == 1) then
+            print("=> " .. current.value .. " (HEAD)")
+        elseif(index == self:getSize()) then
+            print("=> " .. current.value .. " (TAIL)")
+        else
+            print("-> " .. current.value)
+        end
+        current = current.next_node
+        index = index + 1
+    end
+    print("")
+end
+
 
 return Stack
 
