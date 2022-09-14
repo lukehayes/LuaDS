@@ -63,7 +63,8 @@ function Stack:getSize()
         size = size + 1
         current = current.next_node
     end
-return size
+
+    return size
 end
 
 -----------
