@@ -10,7 +10,7 @@ local Stack = {
 -- Create a new empty instance of a Stack.
 --
 -- @return Stack
-function Stack:new()
+function Stack.new()
     local t = setmetatable(
         {},
         {

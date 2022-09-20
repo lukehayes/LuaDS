@@ -16,7 +16,7 @@ List = {
 -- Create a new empty instance of the linked list.
 --
 -- @return List
-function List:new()
+function List.new()
     local t = setmetatable(
         {
         },
